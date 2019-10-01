@@ -3,5 +3,5 @@
   "production": false,
   "apiKey": "<DEV_KEY>",
   "apiBaseUrl": "http://10.0.2.2:8081",
-  "appName": "Leveleet",
+  "appName": "Leveleet"
 }

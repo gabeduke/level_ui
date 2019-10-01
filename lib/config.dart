@@ -11,7 +11,13 @@ class Config {
   final bool production;
   final String apiKey;
 
-  Config({this.env, this.production, this.apiKey});
+  Config({
+    this.env,
+    this.appName,
+    this.apiBaseUrl,
+    this.production,
+    this.apiKey
+    });
 
   factory Config.fromJson(Map<String, dynamic> json) => _$ConfigFromJson(json);
 }

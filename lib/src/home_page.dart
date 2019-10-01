@@ -13,8 +13,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     var config = ConfigWrapper.of(context);
 
-    final apiProvider = ApiProvider();
-    var level = apiProvider.fetchLevel(config.apiBaseUrl);
+    final apiProvider = initApi(config.apiBaseUrl);
+    var level = apiProvider.fetchLevel();
 
     return new Scaffold(
       appBar: new AppBar(

@@ -5,14 +5,19 @@ import 'dart:convert';
 String v1 = '/api/v1';
 String basePath = "";
 
-class ApiProvider {
+initApi(String path) {
+  basePath = path;
+  return _ApiProvider();
+}
+
+class _ApiProvider {
   Client client = Client();
 
   set path(String path) {
     basePath = path;
   }
 
-  Future <LevelModel> fetchLevel(basepath) async {
+  Future <LevelModel> fetchLevel() async {
       final uri = basePath+v1+"/level";
       final response = await client.get(uri);
       if (response.statusCode == 200) {
