@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter_web/material.dart';
 import 'src/app.dart';
 import 'package:level_ui/config.dart';
 import 'package:level_ui/env/prod.dart';

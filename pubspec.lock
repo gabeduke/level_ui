@@ -179,6 +179,24 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web:
+    dependency: "direct main"
+    description:
+      path: "packages/flutter_web"
+      ref: HEAD
+      resolved-ref: c04fb502b842859de07e36954a9390465a5426c0
+      url: "https://github.com/flutter/flutter_web"
+    source: git
+    version: "0.0.0"
+  flutter_web_ui:
+    dependency: "direct overridden"
+    description:
+      path: "packages/flutter_web_ui"
+      ref: HEAD
+      resolved-ref: c04fb502b842859de07e36954a9390465a5426c0
+      url: "https://github.com/flutter/flutter_web"
+    source: git
+    version: "0.0.0"
   front_end:
     dependency: transitive
     description:
@@ -235,6 +253,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.4"
+  intl:
+    dependency: transitive
+    description:
+      name: intl
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.16.0"
   io:
     dependency: transitive
     description:
