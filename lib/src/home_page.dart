@@ -1,5 +1,7 @@
-import 'package:level_ui/src/resources/config.dart';
+import 'package:level_ui/config.dart';
+import 'package:level_ui/src/models/level_model.dart';
 import 'package:flutter/material.dart';
+import 'package:level_ui/src/resources/api_provider.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -9,7 +11,10 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    var config = AppConfig.of(context);
+    var config = ConfigWrapper.of(context);
+
+    final apiProvider = ApiProvider();
+    var level = apiProvider.fetchLevel(config.apiBaseUrl);
 
     return new Scaffold(
       appBar: new AppBar(
@@ -19,8 +24,20 @@ class _MyHomePageState extends State<MyHomePage> {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text('This is the ${config.flavorName} app.'),
+            new Text('This is the ${config.env} app.'),
             new Text('Backend API url is ${config.apiBaseUrl}'),
+            FutureBuilder<LevelModel>(
+              future: level,
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+              if (snapshot.hasData) {
+                return new Text ('Level is ${snapshot.data.reading}');
+              } else if (snapshot.hasError) {
+                return Text("${snapshot.error}");
+              }
+              // By default, show a loading spinner.
+              return CircularProgressIndicator();
+            },
+            ),
           ],
         ),
       ),

@@ -13,7 +13,7 @@ void main(){
       final mapJson = {'reading':4.23};
       return Response(json.encode(mapJson),200);
     });
-    final item = await apiProvider.fetchLevel();
-    expect(item.reading, 4.23);
+    final resp = await apiProvider.fetchLevel();
+    expect(resp.reading, 4.23);
   });
 }
