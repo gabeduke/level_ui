@@ -7,7 +7,9 @@ part of 'prod.dart';
 // **************************************************************************
 
 const _$configJsonLiteral = {
-  'env': 'PROD',
-  'production': true,
-  'apiKey': '<PROD_KEY>'
+  'env': 'Prod',
+  'production': false,
+  'apiKey': '<DEV_KEY>',
+  'apiBaseUrl': 'https://level-6y4rumxsfq-uc.a.run.app',
+  'appName': 'Leveleet'
 };
