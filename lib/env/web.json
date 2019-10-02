@@ -1,0 +1,7 @@
+{
+  "env": "DEV",
+  "production": false,
+  "apiKey": "<DEV_KEY>",
+  "apiBaseUrl": "http://localhost:8081",
+  "appName": "Leveleet"
+}

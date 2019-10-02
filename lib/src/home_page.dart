@@ -24,8 +24,6 @@ class _MyHomePageState extends State<MyHomePage> {
         child: new Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            new Text('This is the ${config.env} app.'),
-            new Text('Backend API url is ${config.apiBaseUrl}'),
             FutureBuilder<LevelModel>(
               future: level,
               builder: (BuildContext context, AsyncSnapshot snapshot) {
